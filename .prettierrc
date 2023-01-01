@@ -1,4 +1,20 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "none",
+  "singleQuote": false,
+  "tabWidth": 4,
+  "jsxSingleQuote": true,
+  "printWidth": 100,
+  "semi": true,
+  "arrowParens": "avoid",
+  "importOrder": [
+    "^@nestjs(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^@/(.*)$",
+    "^@utils(.*)$",
+    "^@config(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
+

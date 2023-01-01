@@ -1,11 +1,16 @@
-import { Body, Controller, Get, Inject, Post } from '@nestjs/common';
-import { Routes, Services } from '../utils/constants';
-import { IAuthService } from './auth.type';
-import { CreateUserDto } from './dtos/CreateUser.dto';
-import { IUserService } from '../user/interfaces/user.interface';
-import { instanceToPlain } from 'class-transformer';
+import { Body, Controller, Get, Inject, Post } from "@nestjs/common";
+
+import { Routes, Services } from "@utils/constants";
+
+import { instanceToPlain } from "class-transformer";
+import { IUserService } from "@/user/services/user/user.interface";
+import { IAuthService } from "@/auth/interfaces/auth.interface";
+import { CreateUserDto } from "@/auth/dto/CreateUser.dto";
+import { LoginUserDto } from "@/auth/dto/LoginUser.dto";
+
 
 @Controller(Routes.AUTH)
+
 export class AuthController {
   constructor(
     @Inject(Services.AUTH) private authService: IAuthService,
@@ -18,7 +23,7 @@ export class AuthController {
   }
 
   @Post('login')
-  login() {}
+  login(@Body() loginUserDto: LoginUserDto) {}
 
   @Get('status')
   status() {}

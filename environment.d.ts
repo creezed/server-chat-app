@@ -7,5 +7,6 @@ declare namespace NodeJS {
     POSTGRES_USER: string;
     POSTGRES_NAME: string;
     POSTGRES_PORT: number;
+    COOKIE_SECRET: string;
   }
 }
